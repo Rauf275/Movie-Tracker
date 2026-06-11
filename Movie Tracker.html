@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Tracker</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- иконки -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="top">
+  <h1>🎬 Movie Tracker</h1>
+
+  <!-- theme button -->
+  <button onclick="toggleTheme()" class="theme-btn" id="themeBtn">
+    <i class="fa-solid fa-moon"></i>
+  </button>
+
+  <div class="search-box">
+    <input id="searchInput" placeholder="Найди фильм..." oninput="autoSearch()">
+    <div id="suggestions"></div>
+  </div>
+
+   <div class="tabs">
+  <button onclick="setTab('all')" id="tab-all" class="tab active-tab">Все</button>
+  <button onclick="setTab('watchlist')" id="tab-watchlist" class="tab">👀 Хочу посмотреть</button>
+  <button onclick="setTab('watched')" id="tab-watched" class="tab">✅ Посмотрел</button>
+</div>
+
+</header>
+
+<div id="trailerModal" class="modal">
+  <div class="modal-content">
+
+    <span class="close-modal" onclick="closeTrailer()">
+      &times;
+    </span>
+
+    <iframe
+      id="trailerFrame"
+      src=""
+      allowfullscreen>
+    </iframe>
+
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<div id="list"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
